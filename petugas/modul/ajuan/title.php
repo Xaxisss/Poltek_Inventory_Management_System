@@ -47,11 +47,18 @@ if (!isset($_SESSION["idinv2"])) {
             box-shadow: 0 6px #166d19; /* Menambahkan efek shadow lebih besar saat dihover */
             transform: translateY(-2px); /* Menggeser tombol ke atas sedikit saat dihover */
         }
-</style>
+        .table-earning tbody tr {
+    transition: all 0.3s ease; /* Transisi halus selama 0.3 detik */
+}
+
+.table-earning tbody tr:hover {
+    transform: scale(1.02); /* Memperbesar sedikit ukuran baris saat dihover */
+    box-shadow: 0 12px 20px -10px rgba(0, 0, 0, 0.1); /* Efek shadow lebih besar saat dihover */
+    background-color: #FFFF00; /* Warna background saat dihover */
+}
+
 
 </style>
-
-    </style> 
 </head>
 <body>
 <!-- Menu -->
