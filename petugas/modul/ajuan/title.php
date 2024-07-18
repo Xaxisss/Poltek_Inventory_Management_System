@@ -30,7 +30,7 @@ if (!isset($_SESSION["idinv2"])) {
     <link href="../css/sidebar.css" rel="stylesheet">
     <style>
     .btn-primary {
-            margin-bottom: 20px; /* Tambahkan margin di bagian bawah tombol tambah data */ 
+            margin-bottom: 40px; /* Tambahkan margin di bagian bawah tombol tambah data */ 
             background-color: #32CD32;
             color: #fff;
             border: none;
