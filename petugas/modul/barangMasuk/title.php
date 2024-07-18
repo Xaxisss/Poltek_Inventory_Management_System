@@ -31,7 +31,7 @@ if (!isset($_SESSION["idinv2"])) {
     <link href="../css/sidebar.css" rel="stylesheet">
 
     <style>
-     .btn-primary {
+        .btn-primary {
             margin-bottom: 20px; /* Tambahkan margin di bagian bawah tombol tambah data */ 
             background-color: #32CD32;
             color: #fff;
@@ -49,18 +49,17 @@ if (!isset($_SESSION["idinv2"])) {
             box-shadow: 0 6px #166d19; /* Menambahkan efek shadow lebih besar saat dihover */
             transform: translateY(-2px); /* Menggeser tombol ke atas sedikit saat dihover */
         }
+
         .table-earning tbody tr {
-    transition: all 0.3s ease; /* Transisi halus selama 0.3 detik */
-}
+            transition: all 0.3s ease; /* Transisi halus selama 0.3 detik */
+            transform-style: preserve-3d; /* Memungkinkan elemen untuk ditransformasikan dalam ruang 3D */
+        }
 
-.table-earning tbody tr:hover {
-    transform: scale(1.02); /* Memperbesar sedikit ukuran baris saat dihover */
-    box-shadow: 0 12px 20px -10px rgba(0, 0, 0, 0.1); /* Efek shadow lebih besar saat dihover */
-    background-color: #FFFF00; /* Warna background saat dihover */
-}
-
-
-</style>
+        .table-earning tbody tr:hover {
+            transform: perspective(1000px) rotateX(5deg) translateY(-2px) scale(1.02); /* Memperbesar ukuran baris saat dihover dan menambahkan efek 3D */
+            box-shadow: 0 12px 20px -10px rgba(0, 0, 0, 0.1); /* Efek shadow lebih besar saat dihover */
+            background-color: #FFFF00; /* Warna background saat dihover */
+        }
     </style>
 
     <script>
@@ -80,11 +79,10 @@ if (!isset($_SESSION["idinv2"])) {
 <body>
     <!-- Menu -->
     <div id="wrapper">  
-            <!-- Horizontal sidebar -->
-            <?php
-                 include("sidebar.php")
-            ?>
-        </nav>
+        <!-- Horizontal sidebar -->
+        <?php
+            include("sidebar.php")
+        ?>
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
@@ -176,16 +174,18 @@ if (!isset($_SESSION["idinv2"])) {
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="submit" name="simpan" class="btn btn-primary">Save changes</button>
+                            <button type="submit" name="simpan">
+
+                            </button>
                         </div>
-                        </form>
+                    </form>
                     </div>
                 </div>
             </div>
 
             <div class="row">
                 <div class="table-wrapper">
-                    <table class="table">
+                    <table class="table table-earning">
                         <thead>
                             <tr>
                                 <th>Id Barang Masuk</th>
